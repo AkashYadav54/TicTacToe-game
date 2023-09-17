@@ -24,7 +24,6 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 250px;
 }
 
 .text-green {
@@ -96,6 +95,7 @@ button {
   .board-row {
     width: 250px;
     display: flex;
+    margin-left: 11rem;
     flex-direction: row;
     border-bottom: 2px solid #fff;
     &:last-child {

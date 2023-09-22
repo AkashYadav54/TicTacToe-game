@@ -1,23 +1,6 @@
-import { useState } from 'react';
 import Square from './Square';
-const Board = () => {
-  const [squares, setsquares] = useState(Array(9).fill(null));
-  const [isXNext, setIsXNext] = useState(false);
-  const handleSquareClick = clickedPosition => {
-    if (squares[clickedPosition]) {
-      return;
-    }
-
-    setsquares(currentSquares => {
-      return currentSquares.map((squareValue, position) => {
-        if (clickedPosition == position) {
-          return isXNext ? 'X' : 'O';
-        }
-        return squareValue;
-      });
-    });
-    setIsXNext(currentIsXNext => !currentIsXNext);
-  };
+// eslint-disable-next-line react/prop-types
+const Board = ({ squares, handleSquareClick }) => {
   const renderSquare = position => {
     return (
       <Square
@@ -28,7 +11,6 @@ const Board = () => {
   };
   return (
     <div className="board">
-      <h1 className="h1">Welcome to the Tic-Tac Toe Game</h1>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
